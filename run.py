@@ -12,6 +12,10 @@ def save_users(user):
     user.save_user()
 
 
+def find_user(name):
+    return User.find_by_name(name)
+
+
 def check_user_exists(name):
     return User.user_exist(name)
 
@@ -37,11 +41,10 @@ def main():
             print(f"Signup successful new user {username} has been created")
 
         elif code == 'l':
-            print("Fill in your credentials to login)
+            print("Fill in your credentials to login")
             print('\n')
 
             username = input("Username: ")
-            password = getpass.getpass("Password: ")
 
         break
 
