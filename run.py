@@ -12,6 +12,10 @@ def save_users(user):
     user.save_user()
 
 
+def check_user_exists(name):
+    return User.user_exist(name)
+
+
 def main():
     print("The password Locker")
     print('\n')
@@ -30,7 +34,14 @@ def main():
             save_users(create_user(username, password))
             print('\n')
 
-            print(f"New user {username} has been created")
+            print(f"Signup successful new user {username} has been created")
+
+        elif code == 'l':
+            print("Fill in your credentials to login)
+            print('\n')
+
+            username = input("Username: ")
+            password = getpass.getpass("Password: ")
 
         break
 

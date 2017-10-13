@@ -11,3 +11,16 @@ class User:
 
     def save_user(self):
         User.user_list.append(self)
+
+    @classmethod
+    def find_by_name(cls, name):
+        for user in cls.user_list:
+            if user.user_name == name:
+                return user
+
+    @classmethod
+    def user_exist(cls, name):
+        for user in cls.user_list:
+            if user.user_name == name:
+                return True
+        return False

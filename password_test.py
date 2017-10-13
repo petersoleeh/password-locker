@@ -25,6 +25,24 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(len(User.user_list), 2)
 
+    def test_login(self):
+        self.new_user.save_user()
+
+        test_user = User("Josie", "123456")
+        test_user.save_user()
+
+        user_exists = User.user_exist("Josie")
+        self.assertTrue(user_exists)
+
+    def test_find_user(self):
+        self.new_user.save_user()
+
+        test_user = User("Josie", "123456")
+        test_user.save_user()
+
+        user_found = User.find_by_name("Josie")
+        self.assertEqual(user_found.password, test_user.password)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
