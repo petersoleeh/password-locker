@@ -47,7 +47,7 @@ def main():
             username = input("Username: ")
             password = getpass.getpass("Password: ")
 
-                break
+            break
 
 
 if __name__ == '__main__':

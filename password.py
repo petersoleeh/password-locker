@@ -30,6 +30,6 @@ class User:
         check whether current user exist and login
         '''
         for user in cls.user_list:
-            if user.user_name == name and user.password == password
+            if user.user_name == name and user.password == password:
                 return user
         return False
