@@ -5,11 +5,17 @@ class User:
     user_list = []
 
     def __init__(self, user_name, password):
+        '''
+        class properties
+        '''
 
         self.user_name = user_name
         self.password = password
 
     def save_user(self):
+        '''
+        save user_list
+        '''
         User.user_list.append(self)
 
     @classmethod
@@ -20,7 +26,10 @@ class User:
 
     @classmethod
     def user_exist(cls, name):
+        '''
+        check whether current user exist and login
+        '''
         for user in cls.user_list:
-            if user.user_name == name:
-                return True
+            if user.user_name == name and user.password == password
+                return user
         return False

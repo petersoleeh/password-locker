@@ -16,7 +16,7 @@ def find_user(name):
     return User.find_by_name(name)
 
 
-def check_user_exists(name):
+def check_user_exists(name, password):
     return User.user_exist(name)
 
 
@@ -45,8 +45,9 @@ def main():
             print('\n')
 
             username = input("Username: ")
+            password = getpass.getpass("Password: ")
 
-        break
+                break
 
 
 if __name__ == '__main__':
