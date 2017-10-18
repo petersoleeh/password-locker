@@ -1,10 +1,10 @@
 #!/usr/bin/env python3.6
 import getpass
-from password import User
+from password import User, Credentials
 
 
-def create_user(uname, pword):
-    new_user = User(uname, pword)
+def create_user(user_name, password):
+    new_user = User(user_name, password)
     return new_user
 
 
@@ -16,8 +16,11 @@ def find_user(name):
     return User.find_by_name(name)
 
 
-def check_user_exists(name, password):
-    return User.user_exist(name)
+def check_user_exists(user_name, password):
+    if_user_exist = Credentials.user_exist(user_name,password)
+    return if_user_exist
+
+
 
 
 def main():
@@ -44,8 +47,11 @@ def main():
             print("Fill in your credentials to login")
             print('\n')
 
-            username = input("Username: ")
+            user_name = input("Username: ")
             password = getpass.getpass("Password: ")
+            log_in = check_user_exists(user_name,password)
+            if log_in == True:
+                print(f"Welcome back{user_name},how can i help you?")
 
             break
 
