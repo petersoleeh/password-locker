@@ -56,7 +56,7 @@ class Credentials:
         '''
         check whether current user exist and login
         '''
-        for user in cls.user_list:
+        for user in User.user_list:
             if user.user_name == user_name and user.password == password:
                 return True
         return False
