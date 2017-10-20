@@ -52,7 +52,7 @@ class TestUser(unittest.TestCase):
 
 class TestCredentials(unittest.TestCase):
     '''
-    test for Credentials
+    test for Credential
     '''
 
     def setUp(self):
