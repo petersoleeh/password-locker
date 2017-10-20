@@ -1,5 +1,4 @@
 #!/usr/bin/env python3.6
-import string
 import random
 
 global user_list
@@ -69,3 +68,11 @@ class Credentials:
         display items in the credential list
         """
         return cls.credential_list
+
+    def generate_password():
+        chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@!#$%&*'
+        password = ""
+        for c in range(10):
+            password +=random.choice(chars)
+
+        return password
